@@ -52,7 +52,6 @@ os.chdir(download_dir / "sdw")
 # Descargar modelos ControlNet
 controlnet_models = [
     "https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/control_v11p_sd15_canny_fp16.safetensors",
-    "https://huggingface.co/ckpt/ControlNet-v1-1/raw/main/control_v11p_sd15_canny_fp16.yaml",
     "https://huggingface.co/ckpt/ControlNet-v1-1/resolve/main/t2iadapter_canny_sd15v2.pth"
 ]
 
@@ -63,9 +62,6 @@ for model_url in controlnet_models:
 # Descargar modelos principales
 main_models = [
     "https://huggingface.co/dreamlike-art/dreamlike-photoreal-2.0/resolve/main/dreamlike-photoreal-2.0.safetensors",
-    "https://huggingface.co/dreamlike-art/dreamlike-anime-1.0/resolve/main/dreamlike-anime-1.0.safetensors",
-    "https://huggingface.co/dreamlike-art/dreamlike-diffusion-1.0/resolve/main/dreamlike-diffusion-1.0.safetensors",
-    "https://huggingface.co/dreamlike-art/dreamlike-photoreal-1.0/resolve/main/dreamlike-photoreal-1.0.ckpt",
 ]
 
 for model_url in main_models:
@@ -76,7 +72,7 @@ for model_url in main_models:
 os.chdir(download_dir / "sdw")
 while True:
     ret = subprocess.run(["python3", "launch.py", "--precision", "full", "--no-half", "--no-half-vae",
-                          "--enable-insecure-extension-access", "--medvram", "--share",
+                          "--enable-insecure-extension-access", "--medvram", "--share", "--skip-torch-cuda-test",
                           "--enable-console-prompts", "--ui-settings-file=" + str(
                               pathlib.Path(__file__).parent / "config.json")])
     if ret.returncode == 0:
