@@ -72,7 +72,7 @@ for model_url in main_models:
 os.chdir(download_dir / "sdw")
 while True:
     ret = subprocess.run(["python3", "launch.py", "--precision", "full", "--no-half", "--no-half-vae",
-                          "--enable-insecure-extension-access", "--medvram", "--share", "--skip-torch-cuda-test",
+                          "--enable-insecure-extension-access", "--medvram", "--share",
                           "--enable-console-prompts", "--ui-settings-file=" + str(
                               pathlib.Path(__file__).parent / "config.json")])
     if ret.returncode == 0:
