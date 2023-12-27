@@ -1,3 +1,4 @@
+gradio==3.29.0
 torch
 torchvision
 torchaudio
@@ -10,18 +11,17 @@ basicsr
 fonts
 font-roboto
 gfpgan
-gradio==3.29.0
 numpy
 omegaconf
 opencv-contrib-python
 requests
 piexif
 Pillow
-pytorch_lightning==1.7.7
+pytorch_lightning
 realesrgan
-scikit-image>=0.19
-timm==0.4.12
-transformers==4.25.1
+scikit-image
+timm
+transformers
 xformers
 einops
 jsonmerge
@@ -36,6 +36,6 @@ torchsde
 safetensors
 psutil
 rich
-httpx==0.24.1
+httpx
 ffmpeg
 ffmpeg-python
